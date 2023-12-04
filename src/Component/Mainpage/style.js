@@ -43,3 +43,32 @@ export const LogoImage = style.img`
   left: 90px;
   top: 30px;
 `;
+
+export const LoginContainer = style.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const LoginText = style.span`
+  color: #000;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-left: 5px;
+
+  position: fixed;
+  left: 120px;
+  `;
+
+export const LoginImage = style.img`
+  width: 60px;
+  height: 30px;
+  flex-shrink: 1;
+  background: #fff;
+
+  position: fixed;
+  right: 270px;
+  top: 30px;
+`;

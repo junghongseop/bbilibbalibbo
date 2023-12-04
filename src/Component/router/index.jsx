@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Main from "../../pages/Mainpage/Mainpage";
+import Main from "../../Pages/MainPage/Mainpage";
 
 const Routers = () => {
   return (
