@@ -6,7 +6,7 @@ function Login() {
   return (
     <S.Body>
       <Navbar />
-      <S.H2>*추후 로그인 넣을 예정*</S.H2>
+      <S.H2>*추후 영상 재생 추가 예정*</S.H2>
     </S.Body>
   );
 }
