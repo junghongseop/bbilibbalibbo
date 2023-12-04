@@ -1,10 +1,10 @@
 import React from "react";
-import Loginpg from "../../Component/Login/loginpage";
+import Sign from "../../Component/Sign/Signpage";
 
 export default function Mainpage() {
   return (
     <>
-      <Loginpg />
+      <Sign />
     </>
   );
 }

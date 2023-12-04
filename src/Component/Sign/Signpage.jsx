@@ -1,15 +1,14 @@
 import React from "react";
 import * as S from "./style";
-import Navbar from "../navbar";
-import logo from "../../img/logo.svg";
+import NavBar from "../navbar";
 
-function Login() {
+function Sign() {
   return (
     <S.Body>
-      <Navbar />
+      <NavBar />
       <S.H2>*추후 회원가입 넣을 예정*</S.H2>
     </S.Body>
   );
 }
 
-export default Login;
+export default Sign;
