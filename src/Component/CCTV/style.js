@@ -1,7 +1,7 @@
 import style from "styled-components";
 
 export const CctvImage = style.img`
-  width: auto;
+  width: 100%;
   height: auto;
   flex-shrink: 0;
   background: #fff;

@@ -5,6 +5,7 @@ import Login from "../../Pages/Login/login";
 import Sign from "../../Pages/Sign/Sign";
 import CCTV from "../../Pages/CCTV/cctv";
 import Log from "../../Pages/Log/log";
+import C from "../../Pages/CCTVlog/cctvlog";
 
 const Routers = () => {
   return (
@@ -15,6 +16,7 @@ const Routers = () => {
       <Route path="/Sign" element={<Sign />} />
       <Route path="/CCTV" element={<CCTV />} />
       <Route path="/Log" element={<Log />} />
+      <Route path="/CCTVlog" element={<C />} />
     </Routes>
   );
 };
