@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/logo.svg";
 import login from "../img/login.svg";
 import sign from "../img/sign.svg";
+import bar from "../img/bar.svg";
 
 const Mainpg = () => {
   return (
@@ -25,6 +26,18 @@ const Mainpg = () => {
             </Link>
           </M.LoginText>
         </M.LoginContainer>
+        <M.SignContainer>
+          <M.SignText>
+            <Link to="/sign">
+              <M.SignImage src={sign} alt="Sign" />
+            </Link>
+          </M.SignText>
+        </M.SignContainer>
+        <M.BarContainer>
+          <M.BarText>
+            <M.BarImage src={bar} alt="bar" />
+          </M.BarText>
+        </M.BarContainer>
       </M.NavbarContainer>
     </body>
   );
