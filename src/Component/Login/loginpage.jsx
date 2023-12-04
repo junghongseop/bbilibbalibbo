@@ -1,7 +1,6 @@
 import React from "react";
 import * as S from "./style";
 import Navbar from "../navbar";
-import logo from "../../img/logo.svg";
 
 function Login() {
   return (
