@@ -1,10 +1,10 @@
 import React from "react";
-import C from "../../Component/CCTVcheck/cctvcheck";
+import CC from "../../Component/CCTVcheck/cctvcheck";
 
 export default function Mainpage() {
   return (
     <>
-      <C />
+      <CC />
     </>
   );
 }
