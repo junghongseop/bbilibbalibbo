@@ -11,11 +11,11 @@ import "./style.css";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
-    width: auto;
-    height: auto;
+    width: 250px;
+    height: 100px;
     position: absolute;
-    right: 400px;
-    top: -400px;
+    right: 514px;
+    top: -365px;
   }
 `;
 

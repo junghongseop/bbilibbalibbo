@@ -7,11 +7,11 @@ export const ImageContainer = styled.div`
 `;
 
 export const LogImage = styled.img`
-  width: 500px;
-  height: auto;
+  width: 400px;
+  height: 300px;
   position: absolute;
-  left: 400px;
-  top: 300px;
+  left: 300px;
+  top: 100px;
 `;
 
 export const LogContainer = styled.div`
@@ -23,11 +23,11 @@ export const LogContainer = styled.div`
 `;
 
 export const CctvImage = styled.img`
-  width: auto;
-  height: auto;
+  width: 500px;
+  height: 600px;
   position: absolute;
-  left: 950px;
-  top: -584px;
+  left: 740px;
+  top: -629px;
 `;
 
 export const CctvContainer = styled.div`
@@ -41,6 +41,6 @@ export const Button = styled.img`
   width: auto;
   height: auto;
   position: absolute;
-  right: 550px;
-  top: -300px;
+  right: 450px;
+  top: -250px;
 `;

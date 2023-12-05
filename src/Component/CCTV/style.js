@@ -1,7 +1,7 @@
 import style from "styled-components";
 
 export const CctvImage = style.img`
-  width: 100%;
+  width: auto;
   height: 100%;
   flex-shrink: 0;
   background: #fff;
@@ -33,7 +33,7 @@ export const VectorImage = style.img`
   height: auto;
   flex-shrink: 1;
 
-  position: fixed;
+  position: relative;
   left: 340px;
   top: 600px;
 `;
