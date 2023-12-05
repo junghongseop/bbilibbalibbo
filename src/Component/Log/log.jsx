@@ -15,7 +15,7 @@ const DatePickerWrapper = styled(S.CctvContainer)`
     height: 100px;
     position: absolute;
     right: 514px;
-    top: -365px;
+    top: 55px;
   }
 `;
 

@@ -17,8 +17,7 @@ export const LogImage = styled.img`
 export const LogContainer = styled.div`
   display: flex;
   align-items: center;
-  overflow: hidden;
-  height: 100vh;
+  height: 40vh;
   position: relative;
 `;
 
@@ -27,13 +26,13 @@ export const CctvImage = styled.img`
   height: 600px;
   position: absolute;
   left: 740px;
-  top: -629px;
+  top: -205px;
 `;
 
 export const CctvContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   position: relative;
 `;
 
@@ -42,5 +41,5 @@ export const Button = styled.img`
   height: auto;
   position: absolute;
   right: 450px;
-  top: -250px;
+  top: 170px;
 `;
