@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import styled from "styled-components";
 import * as S from "./style";
-import log1 from "../../img/log1.svg";
-// import log2 from "../../img/log2.svg";
 import { Link } from "react-router-dom";
 import cctvcheck from "../../img/cctvlog.svg";
 import cctvcheck2 from "../../img/check.svg";
+import log1 from "../../img/log1.svg";
+import "react-datepicker/dist/react-datepicker.css";
+import "./style.css";
+
+const DatePickerWrapper = styled(S.CctvContainer)`
+  .react-datepicker-wrapper {
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 400px;
+    top: -400px;
+  }
+`;
 
 const Log = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
     <>
       <S.LogContainer>
@@ -14,12 +29,16 @@ const Log = () => {
           <S.LogImage src={log1} alt="log" />
         </Link>
       </S.LogContainer>
-      <S.CctvContainer>
+      <DatePickerWrapper>
         <S.CctvImage src={cctvcheck} alt="cctvcheck" />
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
         <Link to="/cctvcheck">
           <S.Button src={cctvcheck2} alt="cctvcheck2" />
         </Link>
-      </S.CctvContainer>
+      </DatePickerWrapper>
     </>
   );
 };
