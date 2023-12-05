@@ -1,13 +1,14 @@
 import style from "styled-components";
 
 export const CctvImage = style.img`
-  width: auto;
-  height: 100%;
+  width: 1519px;
+  height: auto;
   flex-shrink: 0;
   background: #fff;
 
   position: relative;
   top: 89px;
+  overflow: hidden;
 `;
 
 export const VectorContainer = style.div`
@@ -29,11 +30,11 @@ export const VectorText = style.span`
   `;
 
 export const VectorImage = style.img`
-  width: auto;
-  height: auto;
+  width: 500px;
+  height: 90px;
   flex-shrink: 1;
 
   position: relative;
-  left: 340px;
-  top: 600px;
+  left: 140px;
+  top: -10px;
 `;
