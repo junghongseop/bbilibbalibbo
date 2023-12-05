@@ -9,11 +9,9 @@ const CCTV = () => {
     <body>
       <S.CctvImage src={img} alt="CCTV" />
       <S.VectorContainer>
-        <S.VectorText>
-          <Link to="/cctv">
-            <S.VectorImage src={vector} alt="vector" />
-          </Link>
-        </S.VectorText>
+        <Link to="/cctv">
+          <S.VectorImage src={vector} alt="vector" />
+        </Link>
       </S.VectorContainer>
     </body>
   );

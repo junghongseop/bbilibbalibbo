@@ -8,7 +8,6 @@ export const CctvImage = style.img`
 
   position: relative;
   top: 89px;
-  overflow: hidden;
 `;
 
 export const VectorContainer = style.div`
@@ -16,25 +15,12 @@ export const VectorContainer = style.div`
   align-items: center;
 `;
 
-export const VectorText = style.span`
-  color: #000;
-  font-family: Inter;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  margin-left: 5px;
-
-  position: fixed;
-  left: 120px;
-  `;
-
 export const VectorImage = style.img`
   width: 500px;
   height: 90px;
   flex-shrink: 1;
 
   position: relative;
-  left: 140px;
-  top: -10px;
+  left: 250px;
+  top: -50px;
 `;

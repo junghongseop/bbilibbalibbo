@@ -130,3 +130,13 @@ export const BarImage = style.img`
   right: 223px;
   top: 30px;
 `;
+
+export const FooterImage = style.img`
+  width: 100%;
+  height: 100%;
+  flex-shrink: 1;
+  background: #fff;
+
+  right: 0px;
+  bottom: -200px;
+`;
