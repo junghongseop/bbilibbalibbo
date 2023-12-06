@@ -55,26 +55,6 @@ export const Title = styled.div`
   left: 200px;
 `;
 
-export const CheckButton = styled.button`
-  position: absolute;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  top: 78px;
-  left: 45px;
-  line-height: 24px;
-  width: 137.5px;
-  height: 29px;
-  font-weight: 900;
-  font-size: 13.5px;
-  background-color: rgba(255, 194, 12, 1);
-  color: white;
-  size: 90px;
-  border-radius: 8px;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
-  z-index: 1201;
-`;
-
 export const PagesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -82,6 +62,7 @@ export const PagesContainer = styled.div`
   justify-content: flex-start;
   gap: 20px; // 페이지 사이의 간격
 `;
+
 export const Page = styled.div`
   position: relative;
   margin-top: ${(props) => (props.idx > 0 ? "114px" : "0px")};

@@ -5,11 +5,11 @@ import * as S from "./style";
 import { Link } from "react-router-dom";
 import cctvcheck from "../../img/cctvlog.svg";
 import cctvcheck2 from "../../img/check.svg";
-import temp from "../../img/temp.svg";
+import temp1 from "../../img/temp.svg";
 import log1 from "../../img/log1.svg";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
-import $ from "jquery";
+import axiosInstance from "../../util/axios";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
@@ -23,42 +23,32 @@ const DatePickerWrapper = styled(S.CctvContainer)`
 
 const Log = () => {
   const [startDate, setStartDate] = useState(new Date());
-  //const [temperature, setTemperature] = useState(null);
-  //const [humidity, setHumidity] = useState(null);
+  const [temp, setTemperature] = useState(null);
+  const [hum, setHumidity] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await $.ajax({
-          url: "api/now",
-          type: "GET",
-        });
-
-        console.log("Server response:", response);
-        // 소수점을 제거하고 정수 값으로 변환
-        const tempValue = Math.floor(response.temp);
-        const humValue = Math.floor(response.hum);
-
-        console.log("Temp and Hum values:", tempValue, humValue);
-
-        //setTemperature(tempValue);
-        //setHumidity(humValue);
+        const response = await axiosInstance.get("/now");
+        const { temp, hum } = response.data;
+        console.log("Temperature:", temp);
+        setTemperature(temp);
+        console.log("Humidity:", hum);
+        setHumidity(hum);
       } catch (error) {
         console.error("Fetch error:", error);
       }
     };
 
-    // Initial fetch
+    // 컴포넌트가 마운트될 때 데이터를 한 번 가져옵니다.
     fetchData();
 
-    // Set up interval
-    const intervalId = setInterval(() => {
-      fetchData();
-    }, 10000);
+    // 10초마다 fetchData를 호출하는 인터벌을 설정합니다.
+    const intervalId = setInterval(fetchData, 10000);
 
-    // Cleanup function to clear the interval when the component is unmounted
+    // 컴포넌트가 언마운트될 때 인터벌을 해제합니다.
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []);
 
   return (
     <>
@@ -78,12 +68,12 @@ const Log = () => {
         </Link>
       </DatePickerWrapper>
       <S.TempContainer>
-        <S.TempImage src={temp} alt="temp" />
+        <S.TempImage src={temp1} alt="temp" />
         <S.Body>
-          <S.Temperature>24</S.Temperature>
+          <S.Temperature>{temp}</S.Temperature>
         </S.Body>
         <S.Body>
-          <S.Humidity>44</S.Humidity>
+          <S.Humidity>{hum}</S.Humidity>
         </S.Body>
       </S.TempContainer>
     </>
