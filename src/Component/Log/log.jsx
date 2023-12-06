@@ -68,10 +68,9 @@ const Log = () => {
       <S.TempContainer>
         <S.TempImage src={temp1} alt="temp" />
         <S.Body>
-          <S.Temperature>{temp}</S.Temperature>
-        </S.Body>
-        <S.Body>
-          <S.Humidity>{hum}</S.Humidity>
+          <S.Temperature>
+            지금 온도 {temp} °C | 습도 {hum} %{" "}
+          </S.Temperature>
         </S.Body>
       </S.TempContainer>
     </>

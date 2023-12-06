@@ -5,7 +5,7 @@ export const LogImage = styled.img`
   height: 300px;
   position: absolute;
   left: 300px;
-  top: 100px;
+  top: 115px;
 `;
 
 export const LogContainer = styled.div`
@@ -43,7 +43,7 @@ export const TempImage = styled.img`
   height: 300px;
   position: absolute;
   left: 300px;
-  top: -345px;
+  top: -357.4px;
 `;
 
 export const TempContainer = styled.div`
@@ -54,19 +54,15 @@ export const TempContainer = styled.div`
 `;
 
 export const Body = styled.div`
-  position: absolute;
-  top: 100px;
+  position: relative;
+  top: 90px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
 `;
 
-export const Temperature = styled.h4`
-  margin-bottom: 478px;
-  margin-right: 640px;
-`;
-
-export const Humidity = styled.h4`
-  margin-bottom: 478px;
-  margin-right: 420px;
+export const Temperature = styled.div`
+  position: relative;
+  bottom: 230px;
+  right: 417px;
+  font-size: 22px;
+  font-weight: bold;
 `;
