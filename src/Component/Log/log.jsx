@@ -5,6 +5,7 @@ import * as S from "./style";
 import { Link } from "react-router-dom";
 import cctvcheck from "../../img/cctvlog.svg";
 import cctvcheck2 from "../../img/check.svg";
+import temp from "../../img/temp.svg";
 import log1 from "../../img/log1.svg";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
@@ -39,6 +40,9 @@ const Log = () => {
           <S.Button src={cctvcheck2} alt="cctvcheck2" />
         </Link>
       </DatePickerWrapper>
+      <S.TempContainer>
+        <S.TempImage src={temp} alt="temp" />
+      </S.TempContainer>
     </>
   );
 };
