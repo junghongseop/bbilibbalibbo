@@ -68,5 +68,5 @@ export const Temperature = styled.h4`
 
 export const Humidity = styled.h4`
   margin-bottom: 478px;
-  margin-right: 410px;
+  margin-right: 420px;
 `;

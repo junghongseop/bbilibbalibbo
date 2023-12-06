@@ -31,9 +31,7 @@ const Log = () => {
       try {
         const response = await axiosInstance.get("/now");
         const { temp, hum } = response.data;
-        console.log("Temperature:", temp);
         setTemperature(temp);
-        console.log("Humidity:", hum);
         setHumidity(hum);
       } catch (error) {
         console.error("Fetch error:", error);
