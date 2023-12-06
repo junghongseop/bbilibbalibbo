@@ -10,6 +10,8 @@ import log1 from "../../img/log1.svg";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
 import axiosInstance from "../../util/axios";
+import open from "../../img/open.svg";
+import close from "../../img/close.svg";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
@@ -48,6 +50,24 @@ const Log = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleOpenClick = async () => {
+    try {
+      const response = await axiosInstance.get("/open");
+      console.log(response.data); // 응답 확인
+    } catch (error) {
+      console.error("Open API error:", error);
+    }
+  };
+
+  const handleCloseClick = async () => {
+    try {
+      const response = await axiosInstance.get("/close");
+      console.log(response.data); // 응답 확인
+    } catch (error) {
+      console.error("Close API error:", error);
+    }
+  };
+
   return (
     <>
       <S.LogContainer>
@@ -73,6 +93,12 @@ const Log = () => {
           </S.Temperature>
         </S.Body>
       </S.TempContainer>
+      <S.Open onClick={handleOpenClick}>
+        <S.OpenImage src={open} alt="open" />
+      </S.Open>
+      <S.Close onClick={handleCloseClick}>
+        <S.CloseImage src={close} alt="close" />
+      </S.Close>
     </>
   );
 };

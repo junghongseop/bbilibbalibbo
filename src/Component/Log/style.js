@@ -5,7 +5,7 @@ export const LogImage = styled.img`
   height: 300px;
   position: absolute;
   left: 300px;
-  top: 115px;
+  top: 103px;
 `;
 
 export const LogContainer = styled.div`
@@ -43,7 +43,7 @@ export const TempImage = styled.img`
   height: 300px;
   position: absolute;
   left: 300px;
-  top: -357.4px;
+  top: -342px;
 `;
 
 export const TempContainer = styled.div`
@@ -61,8 +61,36 @@ export const Body = styled.div`
 
 export const Temperature = styled.div`
   position: relative;
-  bottom: 230px;
+  bottom: 215px;
   right: 417px;
   font-size: 22px;
   font-weight: bold;
+`;
+
+export const OpenImage = styled.img`
+  width: 180px;
+  height: auto;
+  position: absolute;
+  left: 303px;
+  top: -520px;
+`;
+
+export const CloseImage = styled.img`
+  width: 180px;
+  height: auto;
+  position: absolute;
+  left: 515px;
+  top: -520px;
+`;
+
+export const Open = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+export const Close = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
 `;
