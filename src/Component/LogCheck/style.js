@@ -1,21 +1,12 @@
 import styled from "styled-components";
 
-export const H1 = styled.h1`
-  text-align: center;
-
-  position: fixed;
-  top: 100px;
-  left: 90px;
-`;
-
 export const Body = styled.body`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 13% 0 0 0;
   flex-direction: column;
-  height: 100vh; // 뷰포트 높이로 제한
-  overflow: auto; // 스크롤 기능 추가
+  height: 95vh; // 뷰포트 높이로 제한
 `;
 
 export const LogItem = styled.div`
@@ -33,14 +24,10 @@ export const LogText = styled.p`
 
 export const PageBox = styled.div`
   position: absolute;
-  top: 250px;
-  left: -565px;
-  width: 1140px;
+  top: 1730px;
+  left: -300px;
+  width: 600px;
   height: 110px;
-  background: #ffffff;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  cursor: pointer;
 `;
 
 export const Title = styled.div`
@@ -107,4 +94,13 @@ export const Date = styled.div`
   align-items: center;
   text-align: left;
   color: #565656;
+`;
+
+export const LineImage = styled.img`
+  width: 50px;
+  height: auto;
+
+  position: fixed;
+  right: 0px;
+  top: 0px;
 `;

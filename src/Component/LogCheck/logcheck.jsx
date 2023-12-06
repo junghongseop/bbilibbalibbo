@@ -30,14 +30,14 @@ function LogCheck() {
   return (
     <S.Body>
       <Navbar />
-      <S.H1>출입 기록 관리</S.H1>
+      <S.Title>출입 기록 관리</S.Title>
       {data.map((log, index) => {
-        if (index < 11) {
+        if (index < 100000000) {
           return (
             <S.Page key={index} idx={index} className={`page page-${index}`}>
               <S.PageBox>
-                <S.MiniTitle>{log.date}</S.MiniTitle>
-                <S.Writer>{log.type}</S.Writer>
+                <S.MiniTitle>{log.type}</S.MiniTitle>
+                <S.Writer>LOG ID: {log.log_id}</S.Writer>
                 <S.Date>
                   {new Date(log.date).toISOString().split("T")[0]}
                 </S.Date>
