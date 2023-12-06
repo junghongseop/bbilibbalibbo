@@ -52,3 +52,21 @@ export const TempContainer = styled.div`
   height: 0vh;
   position: relative;
 `;
+
+export const Body = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+`;
+
+export const Temperature = styled.h4`
+  margin-bottom: 478px;
+  margin-right: 640px;
+`;
+
+export const Humidity = styled.h4`
+  margin-bottom: 478px;
+  margin-right: 410px;
+`;

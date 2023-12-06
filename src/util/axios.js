@@ -1,9 +1,9 @@
+// axiosInstance.js
+
 import axios from "axios";
 
-// const currentDomain = window.location.hostname;
-
 export const axiosInstance = axios.create({
-  baseURL: "http://10.129.57.213:3000/api",
+  baseURL: "/api", // 프록시 서버를 통해 백엔드 서버로 전달
   headers: {
     "Content-Type": "application/json",
   },
