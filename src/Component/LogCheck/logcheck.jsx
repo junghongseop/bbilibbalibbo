@@ -38,9 +38,7 @@ function LogCheck() {
               <S.PageBox>
                 <S.Type>{log.type}</S.Type>
                 <S.Logid>LOG ID: {log.log_id}</S.Logid>
-                <S.Date>
-                  {new Date(log.date).toISOString().split("T")[0]}
-                </S.Date>
+                <S.Date>{log.date}</S.Date>
               </S.PageBox>
             </S.Page>
           );

@@ -12,6 +12,9 @@ import "./style.css";
 import axiosInstance from "../../util/axios";
 import open from "../../img/open.svg";
 import close from "../../img/close.svg";
+//import Modal from "react-modal";
+//import openpopup from "../../img/openpopup.svg";
+//import x from "../../img/x.svg";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
@@ -27,6 +30,8 @@ const Log = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [temp, setTemperature] = useState(null);
   const [hum, setHumidity] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalClose, setIsModalClose] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +59,11 @@ const Log = () => {
     try {
       const response = await axiosInstance.get("/open");
       console.log(response.data); // 응답 확인
+      if (response.data.check === "open_error") {
+        alert("이미 문이 열려있습니다.");
+      } else if (response.data.check === "open_success") {
+        alert("문이 열렸습니다.");
+      }
     } catch (error) {
       console.error("Open API error:", error);
     }
@@ -63,6 +73,8 @@ const Log = () => {
     try {
       const response = await axiosInstance.get("/close");
       console.log(response.data); // 응답 확인
+      setIsModalClose(true);
+      alert("문이 닫혔습니다.");
     } catch (error) {
       console.error("Close API error:", error);
     }

@@ -94,3 +94,32 @@ export const Close = styled.div`
   align-items: center;
   position: relative;
 `;
+
+export const ModalContent = styled.div`
+  display: flex !important;
+  width: 390px;
+  height: 157.5px;
+  padding: 0px !important;
+  border-radius: 16px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+`;
+
+export const PopupImage = styled.img`
+  position: absolute;
+  top: 1000px;
+  width: 100px;
+`;
+
+export const CheckImage = styled.img`
+  width: 100%;
+  height: 100%;
+  flex-shrink: 1;
+  background: #fff;
+
+  right: 0px;
+  bottom: -200px;
+`;
