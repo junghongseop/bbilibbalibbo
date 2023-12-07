@@ -97,29 +97,28 @@ export const Close = styled.div`
 
 export const ModalContent = styled.div`
   display: flex !important;
-  width: 390px;
-  height: 157.5px;
+  width: 10px;
+  height: 10px;
   padding: 0px !important;
   border-radius: 16px !important;
   justify-content: center !important;
-  align-items: center !important;
   margin: 0 auto !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
+  overflow: hidden !important; // 추가된 코드
 `;
 
 export const PopupImage = styled.img`
   position: absolute;
-  top: 1000px;
-  width: 100px;
+  top: -80px;
+  width: 700px;
+  height: 700px;
 `;
 
-export const CheckImage = styled.img`
-  width: 100%;
-  height: 100%;
-  flex-shrink: 1;
-  background: #fff;
-
-  right: 0px;
-  bottom: -200px;
+export const XImage = styled.img`
+  width: 25px; // 사이즈 조절
+  height: 25px;
+  position: absolute;
+  right: 45px; // 위치 조절
+  top: 65px;
 `;

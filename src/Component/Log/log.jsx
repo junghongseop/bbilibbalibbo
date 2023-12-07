@@ -12,9 +12,9 @@ import "./style.css";
 import axiosInstance from "../../util/axios";
 import open from "../../img/open.svg";
 import close from "../../img/close.svg";
-//import Modal from "react-modal";
-//import openpopup from "../../img/openpopup.svg";
-//import x from "../../img/x.svg";
+import Modal from "react-modal";
+import openpopup from "../../img/openpopup.svg";
+import x from "../../img/x.svg";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
@@ -30,8 +30,8 @@ const Log = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [temp, setTemperature] = useState(null);
   const [hum, setHumidity] = useState(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [isModalClose, setIsModalClose] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  //const [isModalClose, setIsModalClose] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,25 +45,18 @@ const Log = () => {
       }
     };
 
-    // 컴포넌트가 마운트될 때 데이터를 한 번 가져옵니다.
     fetchData();
 
-    // 10초마다 fetchData를 호출하는 인터벌을 설정합니다.
     const intervalId = setInterval(fetchData, 10000);
 
-    // 컴포넌트가 언마운트될 때 인터벌을 해제합니다.
     return () => clearInterval(intervalId);
   }, []);
 
   const handleOpenClick = async () => {
     try {
-      const response = await axiosInstance.get("/open");
-      console.log(response.data); // 응답 확인
-      if (response.data.check === "open_error") {
-        alert("이미 문이 열려있습니다.");
-      } else if (response.data.check === "open_success") {
-        alert("문이 열렸습니다.");
-      }
+      await axiosInstance.get("/open");
+      document.body.style.overflow = "hidden";
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Open API error:", error);
     }
@@ -72,7 +65,7 @@ const Log = () => {
   const handleCloseClick = async () => {
     try {
       const response = await axiosInstance.get("/close");
-      console.log(response.data); // 응답 확인
+      console.log(response.data);
       if (response.data.check === "close_error") {
         alert("이미 문이 닫혀있습니다.");
       } else if (response.data.check === "close_success") {
@@ -81,6 +74,11 @@ const Log = () => {
     } catch (error) {
       console.error("Open API error:", error);
     }
+  };
+
+  const closeModal = () => {
+    document.body.style.overflow = "auto"; // 모달이 닫힐 때 body의 overflow를 auto로 설정
+    setIsModalOpen(false);
   };
 
   return (
@@ -114,6 +112,32 @@ const Log = () => {
       <S.Close onClick={handleCloseClick}>
         <S.CloseImage src={close} alt="close" />
       </S.Close>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.40)",
+          },
+          content: {
+            overflow: "hidden", // 모달 내부 스크롤 제거
+            top: "55%", // 화면의 중앙에 위치
+            left: "25%", // 왼쪽 위치는 자동으로 설정
+            right: "0px", // 화면 오른쪽 끝에 위치
+            width: "700px", // 모달 너비 조절
+            height: "70%", // 모달 높이 조절
+            transform: "translateY(-50%)", // Y축 방향으로 50% 이동하여 중심점을 맞춤
+          },
+        }}
+      >
+        <S.ModalContent>
+          <S.PopupImage src={openpopup} alt="openpopup" />
+          <Link to="/" onClick={closeModal}>
+            <S.XImage src={x} alt="x" />
+          </Link>
+        </S.ModalContent>
+      </Modal>
     </>
   );
 };
