@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Main from "../../Pages/MainPage/Mainpage";
+import Main from "../../Pages/MainPage/MainPage";
 import Login from "../../Pages/Login/login";
 import Sign from "../../Pages/Sign/Sign";
 import CCTV from "../../Pages/CCTV/cctv";

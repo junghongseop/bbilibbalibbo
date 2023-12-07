@@ -15,6 +15,9 @@ import close from "../../img/close.svg";
 import Modal from "react-modal";
 import openpopup from "../../img/openpopup.svg";
 import x from "../../img/x.svg";
+import closepopup from "../../img/closepopup.svg";
+import closing from "../../img/closing.svg";
+import openning from "../../img/openning.svg";
 
 const DatePickerWrapper = styled(S.CctvContainer)`
   .react-datepicker-wrapper {
@@ -67,10 +70,11 @@ const Log = () => {
       const response = await axiosInstance.get("/close");
       console.log(response.data);
       if (response.data.check === "close_error") {
-        alert("이미 문이 닫혀있습니다.");
       } else if (response.data.check === "close_success") {
         alert("문이 닫혔습니다.");
       }
+      document.body.style.overflow = "hidden"; // 추가된 코드
+      setIsModalOpen(true); // 추가된 코드
     } catch (error) {
       console.error("Open API error:", error);
     }
@@ -125,14 +129,92 @@ const Log = () => {
             top: "55%", // 화면의 중앙에 위치
             left: "25%", // 왼쪽 위치는 자동으로 설정
             right: "0px", // 화면 오른쪽 끝에 위치
-            width: "700px", // 모달 너비 조절
-            height: "70%", // 모달 높이 조절
+            width: "659.695px", // 모달 너비 조절
+            height: "428px", // 모달 높이 조절
             transform: "translateY(-50%)", // Y축 방향으로 50% 이동하여 중심점을 맞춤
           },
         }}
       >
         <S.ModalContent>
           <S.PopupImage src={openpopup} alt="openpopup" />
+          <Link to="/" onClick={closeModal}>
+            <S.XImage src={x} alt="x" />
+          </Link>
+        </S.ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.40)",
+          },
+          content: {
+            overflow: "hidden", // 모달 내부 스크롤 제거
+            top: "55%", // 화면의 중앙에 위치
+            left: "25%", // 왼쪽 위치는 자동으로 설정
+            right: "0px", // 화면 오른쪽 끝에 위치
+            width: "659.695px", // 모달 너비 조절
+            height: "428px", // 모달 높이 조절
+            transform: "translateY(-50%)", // Y축 방향으로 50% 이동하여 중심점을 맞춤
+          },
+        }}
+      >
+        <S.ModalContent>
+          <S.PopupImage src={closepopup} alt="closepopup" />
+          <Link to="/" onClick={closeModal}>
+            <S.XImage src={x} alt="x" />
+          </Link>
+        </S.ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.40)",
+          },
+          content: {
+            overflow: "hidden", // 모달 내부 스크롤 제거
+            top: "55%", // 화면의 중앙에 위치
+            left: "25%", // 왼쪽 위치는 자동으로 설정
+            right: "0px", // 화면 오른쪽 끝에 위치
+            width: "659.695px", // 모달 너비 조절
+            height: "428px", // 모달 높이 조절
+            transform: "translateY(-50%)", // Y축 방향으로 50% 이동하여 중심점을 맞춤
+          },
+        }}
+      >
+        <S.ModalContent>
+          <S.PopupImage src={closing} alt="closing" />
+          <Link to="/" onClick={closeModal}>
+            <S.XImage src={x} alt="x" />
+          </Link>
+        </S.ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.40)",
+          },
+          content: {
+            overflow: "hidden", // 모달 내부 스크롤 제거
+            top: "55%", // 화면의 중앙에 위치
+            left: "25%", // 왼쪽 위치는 자동으로 설정
+            right: "0px", // 화면 오른쪽 끝에 위치
+            width: "659.695px", // 모달 너비 조절
+            height: "428px", // 모달 높이 조절
+            transform: "translateY(-50%)", // Y축 방향으로 50% 이동하여 중심점을 맞춤
+          },
+        }}
+      >
+        <S.ModalContent>
+          <S.PopupImage src={openning} alt="openning" />
           <Link to="/" onClick={closeModal}>
             <S.XImage src={x} alt="x" />
           </Link>
