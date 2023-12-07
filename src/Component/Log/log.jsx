@@ -30,8 +30,8 @@ const Log = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [temp, setTemperature] = useState(null);
   const [hum, setHumidity] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalClose, setIsModalClose] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalClose, setIsModalClose] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,10 +73,13 @@ const Log = () => {
     try {
       const response = await axiosInstance.get("/close");
       console.log(response.data); // 응답 확인
-      setIsModalClose(true);
-      alert("문이 닫혔습니다.");
+      if (response.data.check === "close_error") {
+        alert("이미 문이 닫혀있습니다.");
+      } else if (response.data.check === "close_success") {
+        alert("문이 닫혔습니다.");
+      }
     } catch (error) {
-      console.error("Close API error:", error);
+      console.error("Open API error:", error);
     }
   };
 
