@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const AllContainer = styled.div`
+  /* 필요한 스타일을 여기에 추가하세요. 없다면 이대로 둬도 괜찮습니다. */
+`;
+
 export const LogImage = styled.img`
   width: 400px;
   height: 300px;

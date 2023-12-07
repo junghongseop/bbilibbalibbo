@@ -28,23 +28,25 @@ function LogCheck() {
   }, []); // 빈 dependency array는 컴포넌트가 마운트될 때만 실행
 
   return (
-    <S.Body>
-      <Navbar />
-      <S.Title>출입 기록 관리</S.Title>
-      <S.PagesContainer>
-        {data.map((log, index) => {
-          return (
-            <S.Page key={index} idx={index} className={`page page-${index}`}>
-              <S.PageBox>
-                <S.Type>{log.type}</S.Type>
-                <S.Logid>LOG ID: {log.log_id}</S.Logid>
-                <S.Date>{log.date}</S.Date>
-              </S.PageBox>
-            </S.Page>
-          );
-        })}
-      </S.PagesContainer>
-    </S.Body>
+    <>
+      <S.Body>
+        <Navbar />
+        <S.Title>출입 기록 관리</S.Title>
+        <S.PagesContainer>
+          {data.map((log, index) => {
+            return (
+              <S.Page key={index} idx={index}>
+                <S.PageBox>
+                  <S.Type>{log.type}</S.Type>
+                  <S.Logid>LOG ID: {log.log_id}</S.Logid>
+                  <S.Date>{log.date}</S.Date>
+                </S.PageBox>
+              </S.Page>
+            );
+          })}
+        </S.PagesContainer>
+      </S.Body>
+    </>
   );
 }
 

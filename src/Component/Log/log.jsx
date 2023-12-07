@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import styled from "styled-components";
@@ -33,8 +34,10 @@ const Log = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [temp, setTemperature] = useState(null);
   const [hum, setHumidity] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  //const [isModalClose, setIsModalClose] = useState(false);
+  const [isOpenModalOpen, setIsOpenModalOpen] = useState(false);
+  const [isCloseModalOpen, setIsCloseModalOpen] = useState(false);
+  const [isOpenningModalOpen, setIsOpenningModalOpen] = useState(false);
+  const [isClosingModalOpen, setIsClosingModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,9 +60,13 @@ const Log = () => {
 
   const handleOpenClick = async () => {
     try {
-      await axiosInstance.get("/open");
-      document.body.style.overflow = "hidden";
-      setIsModalOpen(true);
+      const response = await axiosInstance.get("/open");
+      console.log(response.data);
+      if (response.data.check === "open_error") {
+        setIsOpenningModalOpen(true);
+      } else if (response.data.check === "open_success") {
+        setIsOpenModalOpen(true);
+      }
     } catch (error) {
       console.error("Open API error:", error);
     }
@@ -70,23 +77,25 @@ const Log = () => {
       const response = await axiosInstance.get("/close");
       console.log(response.data);
       if (response.data.check === "close_error") {
+        setIsClosingModalOpen(true);
       } else if (response.data.check === "close_success") {
-        alert("문이 닫혔습니다.");
+        setIsCloseModalOpen(true);
       }
-      document.body.style.overflow = "hidden"; // 추가된 코드
-      setIsModalOpen(true); // 추가된 코드
     } catch (error) {
       console.error("Open API error:", error);
     }
   };
 
   const closeModal = () => {
-    document.body.style.overflow = "auto"; // 모달이 닫힐 때 body의 overflow를 auto로 설정
-    setIsModalOpen(false);
+    document.body.style.overflow = "auto";
+    setIsOpenModalOpen(false);
+    setIsCloseModalOpen(false);
+    setIsOpenningModalOpen(false);
+    setIsClosingModalOpen(false);
   };
 
   return (
-    <>
+    <S.AllContainer>
       <S.LogContainer>
         <Link to="/log">
           <S.LogImage src={log1} alt="log" />
@@ -118,7 +127,7 @@ const Log = () => {
       </S.Close>
 
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isOpenModalOpen}
         onRequestClose={closeModal}
         style={{
           overlay: {
@@ -144,7 +153,7 @@ const Log = () => {
       </Modal>
 
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isCloseModalOpen}
         onRequestClose={closeModal}
         style={{
           overlay: {
@@ -170,7 +179,7 @@ const Log = () => {
       </Modal>
 
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isClosingModalOpen}
         onRequestClose={closeModal}
         style={{
           overlay: {
@@ -196,7 +205,7 @@ const Log = () => {
       </Modal>
 
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isOpenningModalOpen}
         onRequestClose={closeModal}
         style={{
           overlay: {
@@ -220,7 +229,7 @@ const Log = () => {
           </Link>
         </S.ModalContent>
       </Modal>
-    </>
+    </S.AllContainer>
   );
 };
 

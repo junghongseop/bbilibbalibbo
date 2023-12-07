@@ -24,7 +24,7 @@ export const LogText = styled.p`
 
 export const PageBox = styled.div`
   position: relative;
-  top: 3100px;
+  top: 8000px;
   left: 0px;
   width: 600px;
   height: 10px;
