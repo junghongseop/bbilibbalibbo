@@ -6,7 +6,7 @@ export const Body = styled.body`
   justify-content: center;
   padding: 13% 0 0 0;
   flex-direction: column;
-  height: 95vh; // 뷰포트 높이로 제한
+  height: 90vh; // 뷰포트 높이로 제한
 `;
 
 export const LogItem = styled.div`
@@ -23,11 +23,11 @@ export const LogText = styled.p`
 `;
 
 export const PageBox = styled.div`
-  position: absolute;
-  top: 1730px;
-  left: -300px;
+  position: relative;
+  top: 2500px;
+  left: 0px;
   width: 600px;
-  height: 110px;
+  height: 10px;
 `;
 
 export const Title = styled.div`
@@ -43,19 +43,19 @@ export const Title = styled.div`
 `;
 
 export const PagesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px; // 페이지 사이의 간격
+  gap: 10px;
 `;
 
 export const Page = styled.div`
   position: relative;
-  margin-top: ${(props) => (props.idx > 0 ? "114px" : "0px")};
+  margin-top: 100px;
 `;
 
-export const MiniTitle = styled.div`
+export const Type = styled.div`
   position: absolute;
   width: 458px;
   height: 44px;
@@ -68,7 +68,7 @@ export const MiniTitle = styled.div`
   color: #000000;
 `;
 
-export const Writer = styled.div`
+export const Logid = styled.div`
   position: absolute;
   width: 205px;
   height: 22px;
@@ -94,13 +94,4 @@ export const Date = styled.div`
   align-items: center;
   text-align: left;
   color: #565656;
-`;
-
-export const LineImage = styled.img`
-  width: 50px;
-  height: auto;
-
-  position: fixed;
-  right: 0px;
-  top: 0px;
 `;

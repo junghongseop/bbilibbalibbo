@@ -31,21 +31,21 @@ function LogCheck() {
     <S.Body>
       <Navbar />
       <S.Title>출입 기록 관리</S.Title>
-      {data.map((log, index) => {
-        if (index < 100000000) {
+      <S.PagesContainer>
+        {data.map((log, index) => {
           return (
             <S.Page key={index} idx={index} className={`page page-${index}`}>
               <S.PageBox>
-                <S.MiniTitle>{log.type}</S.MiniTitle>
-                <S.Writer>LOG ID: {log.log_id}</S.Writer>
+                <S.Type>{log.type}</S.Type>
+                <S.Logid>LOG ID: {log.log_id}</S.Logid>
                 <S.Date>
                   {new Date(log.date).toISOString().split("T")[0]}
                 </S.Date>
               </S.PageBox>
             </S.Page>
           );
-        }
-      })}
+        })}
+      </S.PagesContainer>
     </S.Body>
   );
 }
