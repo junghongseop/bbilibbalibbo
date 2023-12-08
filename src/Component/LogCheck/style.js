@@ -24,7 +24,7 @@ export const LogText = styled.p`
 
 export const PageBox = styled.div`
   position: relative;
-  top: 8000px;
+  top: 1300px;
   left: 0px;
   width: 600px;
   height: 10px;
@@ -43,16 +43,18 @@ export const Title = styled.div`
 `;
 
 export const PagesContainer = styled.div`
-  display: grid;
-  flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  overflow: hidden;
 `;
 
 export const Page = styled.div`
-  position: relative;
-  margin-top: 100px;
+  position: none;
+  display: flex;
+  margin-top: 90px;
 `;
 
 export const Type = styled.div`
