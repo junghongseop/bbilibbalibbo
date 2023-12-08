@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Main from "../../Pages/MainPage/MainPage";
-import Login from "../../Pages/Login/login";
-import Sign from "../../Pages/Sign/Sign";
-import CCTV from "../../Pages/CCTV/cctv";
-import Log from "../../Pages/Log/log";
-import C from "../../Pages/CCTVlog/cctvlog";
+import Main from "../../pages/Mainpage/Mainpage";
+import Login from "../../pages/Login/login";
+import Sign from "../../pages/Sign/Sign";
+import CCTV from "../../pages/CCTV/cctv";
+import Log from "../../pages/Log/log";
+import C from "../../pages/CCTVlog/cctvlog";
 
 const Routers = () => {
   return (
