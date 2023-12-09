@@ -42,15 +42,6 @@ export const Title = styled.div`
   left: 200px;
 `;
 
-export const PagesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  overflow: hidden;
-`;
-
 export const Page = styled.div`
   position: none;
   display: flex;
