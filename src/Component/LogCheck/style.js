@@ -24,8 +24,7 @@ export const LogText = styled.p`
 
 export const PageBox = styled.div`
   position: relative;
-  top: 1300px;
-  left: 0px;
+  top: 1900px;
   width: 600px;
   height: 10px;
 `;
@@ -43,9 +42,8 @@ export const Title = styled.div`
 `;
 
 export const Page = styled.div`
-  position: none;
-  display: flex;
-  margin-top: 90px;
+  position: relative;
+  margin-top: 80px;
 `;
 
 export const Type = styled.div`
@@ -87,4 +85,12 @@ export const Date = styled.div`
   align-items: center;
   text-align: left;
   color: #565656;
+`;
+
+export const PagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px; // 페이지 사이의 간격
 `;

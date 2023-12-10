@@ -27,17 +27,22 @@ function LogCheck() {
       <S.Body>
         <Navbar />
         <S.Title>출입 기록 관리</S.Title>
-        {data.map((log, index) => {
-          return (
-            <S.Page>
-              <S.PageBox>
-                <S.Type>{log.type}</S.Type>
-                <S.Logid>LOG ID: {log.log_id}</S.Logid>
-                <S.Date>{log.date}</S.Date>
-              </S.PageBox>
-            </S.Page>
-          );
-        })}
+        <S.PagesContainer>
+          {data.map((log, index) => {
+            if (index < 100000000000000) {
+              return (
+                <S.Page key={log.log_id}>
+                  <S.PageBox>
+                    <S.Type>{log.type}</S.Type>
+                    <S.Logid>LOG ID: {log.log_id}</S.Logid>
+                    <S.Date>{log.date}</S.Date>
+                  </S.PageBox>
+                </S.Page>
+              );
+            }
+            return null;
+          })}
+        </S.PagesContainer>
       </S.Body>
     </>
   );
