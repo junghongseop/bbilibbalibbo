@@ -24,7 +24,7 @@ export const LogText = styled.p`
 
 export const PageBox = styled.div`
   position: relative;
-  top: 1900px;
+  top: 1600px;
   width: 600px;
   height: 10px;
 `;
@@ -85,12 +85,4 @@ export const Date = styled.div`
   align-items: center;
   text-align: left;
   color: #565656;
-`;
-
-export const PagesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px; // 페이지 사이의 간격
 `;
