@@ -42,8 +42,9 @@ export const Title = styled.div`
 `;
 
 export const Page = styled.div`
-  position: relative;
-  margin-top: 80px;
+  position: none;
+  display: flex;
+  margin-top: 90px;
 `;
 
 export const Type = styled.div`
