@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Main from "../../pages/Mainpage/Mainpage";
 import Login from "../../pages/Login/login";
 import Sign from "../../pages/Sign/Sign";
-import CCTV from "../../pages/CCTV/cctv";
 import Log from "../../pages/Log/log";
 import C from "../../pages/CCTVlog/cctvlog";
 
@@ -14,7 +13,6 @@ const Routers = () => {
       <Route path="/main" element={<Main />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Sign" element={<Sign />} />
-      <Route path="/CCTV" element={<CCTV />} />
       <Route path="/Log" element={<Log />} />
       <Route path="/cctvcheck" element={<C />} />
     </Routes>
