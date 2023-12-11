@@ -1,54 +1,23 @@
 import styled from "styled-components";
 
-export const Body = styled.body`
+export const Body = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 13% 0 0 0;
   flex-direction: column;
-  height: 90vh; // 뷰포트 높이로 제한
-`;
-
-export const LogItem = styled.div`
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-  width: 50%;
-  text-align: left;
-  height: 100px;
-`;
-
-export const LogText = styled.p`
-  margin: 0;
+  height: 100%; // 뷰포트 높이로 제한
 `;
 
 export const PageBox = styled.div`
   position: relative;
-  top: 2000px;
-  width: 600px;
-  height: 10px;
-`;
-
-export const Title = styled.div`
-  position: absolute;
-  width: 400px;
-  height: 30px;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 50px;
-  text-align: left;
-  top: 160px;
-  left: 200px;
-`;
-
-export const Page = styled.div`
-  position: rlative;
-  display: flex;
-  margin-top: 90px;
+  left: 400px;
+  width: 1100px;
+  height: 110px;
+  top: 200px;
 `;
 
 export const Type = styled.div`
-  position: absolute;
+  position: relative;
   width: 458px;
   height: 44px;
   left: 54px;
@@ -60,7 +29,7 @@ export const Type = styled.div`
   color: #000000;
 `;
 
-export const Logid = styled.div`
+export const Log = styled.div`
   position: absolute;
   width: 205px;
   height: 22px;
@@ -86,4 +55,23 @@ export const Date = styled.div`
   align-items: center;
   text-align: left;
   color: #565656;
+`;
+
+export const Title = styled.div`
+  position: absolute;
+  width: 400px;
+  height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  top: 160px;
+  left: 200px;
+`;
+
+export const PagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 `;

@@ -27,17 +27,17 @@ function LogCheck() {
       <S.Body>
         <Navbar />
         <S.Title>출입 기록 관리</S.Title>
-        {data.map((log, index) => {
-          return (
-            <S.Page key={log.log_id}>
+        <S.PagesContainer>
+          {data.map((log) => {
+            return (
               <S.PageBox>
                 <S.Type>{log.type}</S.Type>
-                <S.Logid>LOG ID: {log.log_id}</S.Logid>
+                <S.Log>LOG ID: {log.log_id}</S.Log>
                 <S.Date>{log.date}</S.Date>
               </S.PageBox>
-            </S.Page>
-          );
-        })}
+            );
+          })}
+        </S.PagesContainer>
       </S.Body>
     </>
   );
