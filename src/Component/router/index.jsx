@@ -14,7 +14,7 @@ const Routers = () => {
       <Route path="/Login" element={<Login />} />
       <Route path="/Sign" element={<Sign />} />
       <Route path="/Log" element={<Log />} />
-      <Route path="/cctvcheck" element={<C />} />
+      <Route path="/CCTVcheck" element={<C />} />
     </Routes>
   );
 };
